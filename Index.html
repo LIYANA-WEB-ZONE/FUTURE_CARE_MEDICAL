@@ -13,12 +13,12 @@
     }
 
     .container {
-      width: 90%;
-      max-width: 500px;
+      width: 70%;             /* thinner panel */
+      max-width: 340px;       /* smaller max width */
       background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       margin: 40px auto;
       text-align: center;
       box-sizing: border-box;
@@ -26,7 +26,7 @@
 
     h2 {
       margin-bottom: 20px;
-      font-size: 28px; /* larger title */
+      font-size: 28px;
       color: #222;
     }
 
@@ -64,7 +64,7 @@
       background: #f5f7ff;
       border: 1px solid #d0d5ff;
       border-radius: 10px;
-      padding: 25px;
+      padding: 20px;
       font-weight: bold;
       color: #222;
       line-height: 1.6;
@@ -72,8 +72,8 @@
     }
 
     .result-item {
-      margin-bottom: 20px;       /* increased spacing between items */
-      padding-bottom: 15px;      /* increased padding before separator */
+      margin-bottom: 18px;    /* smaller spacing */
+      padding-bottom: 14px;   /* smaller spacing */
       border-bottom: 1px dashed #aaa;
     }
 
@@ -96,7 +96,7 @@
     }
 
     .value span {
-      display: block; /* wrap lines start at left */
+      display: block;
     }
 
     .not-found {
@@ -108,10 +108,10 @@
 
     /* Responsive */
     @media screen and (max-width: 768px) {
-      .container { width: 95%; padding: 20px; }
+      .container { width: 88%; padding: 18px; }
       h2 { font-size: 24px; }
       input[type="text"], button { font-size: 16px; padding: 12px; }
-      .result-content { font-size: 16px; padding: 20px; line-height: 1.5; }
+      .result-content { font-size: 16px; padding: 18px; line-height: 1.5; }
       .result-item { margin-bottom: 15px; padding-bottom: 12px; }
     }
 
@@ -119,7 +119,7 @@
       .container { width: 95%; padding: 15px; }
       h2 { font-size: 22px; }
       input[type="text"], button { font-size: 15px; padding: 10px; }
-      .result-content { font-size: 15px; padding: 18px; line-height: 1.4; }
+      .result-content { font-size: 15px; padding: 15px; line-height: 1.4; }
       .result-item { margin-bottom: 12px; padding-bottom: 10px; }
     }
 
@@ -144,7 +144,6 @@
         "CLINIC": "Future Care Medical Clinic",
         "ISSUE_DATE": "2025-09-11"
       },
-      
       {
         "MC_ID": "10288",
         "NAME": "SULAKSHANA PRAMOD",
