@@ -11,118 +11,78 @@
       margin: 0;
       padding: 0;
     }
-
     .container {
-      width: 70%;             /* thinner panel */
-      max-width: 340px;       /* smaller max width */
+      width: 90%;
+      max-width: 500px;
       background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
       margin: 40px auto;
       text-align: center;
-      box-sizing: border-box;
     }
-
     h2 {
       margin-bottom: 20px;
-      font-size: 28px;
+      font-size: 22px;
       color: #222;
     }
-
     input[type="text"] {
       width: 100%;
       padding: 14px;
-      font-size: 17px;
+      font-size: 16px;
       border: 1px solid #ccc;
       border-radius: 8px;
       margin-bottom: 15px;
       box-sizing: border-box;
     }
-
     button {
       width: 100%;
       padding: 12px;
-      font-size: 17px;
+      font-size: 16px;
       border: none;
       border-radius: 8px;
       background: #1976d2;
       color: white;
       cursor: pointer;
     }
-
     button:hover {
       background: #115293;
     }
-
     .result {
-      margin-top: 20px;
-      text-align: left;
-    }
-
-    .result-content {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 8px;
       background: #f5f7ff;
       border: 1px solid #d0d5ff;
-      border-radius: 10px;
-      padding: 20px;
-      font-weight: bold;
-      color: #222;
-      line-height: 1.6;
-      font-size: 17px;
+      text-align: left;
     }
-
     .result-item {
-      margin-bottom: 18px;    /* smaller spacing */
-      padding-bottom: 14px;   /* smaller spacing */
-      border-bottom: 1px dashed #aaa;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 8px;
     }
-
     .result-item:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
-
     .label {
       font-weight: bold;
       display: inline-block;
       width: 35%;
-      vertical-align: top;
+      color: #444;
     }
-
     .value {
       display: inline-block;
       width: 60%;
+      color: #222;
     }
-
-    .value span {
-      display: block;
-    }
-
     .not-found {
       color: #c62828;
       text-align: center;
       font-weight: bold;
-      font-size: 17px;
+      font-size: 16px;
     }
-
-    /* Responsive */
-    @media screen and (max-width: 768px) {
-      .container { width: 88%; padding: 18px; }
-      h2 { font-size: 24px; }
-      input[type="text"], button { font-size: 16px; padding: 12px; }
-      .result-content { font-size: 16px; padding: 18px; line-height: 1.5; }
-      .result-item { margin-bottom: 15px; padding-bottom: 12px; }
-    }
-
-    @media screen and (max-width: 480px) {
-      .container { width: 95%; padding: 15px; }
-      h2 { font-size: 22px; }
-      input[type="text"], button { font-size: 15px; padding: 10px; }
-      .result-content { font-size: 15px; padding: 15px; line-height: 1.4; }
-      .result-item { margin-bottom: 12px; padding-bottom: 10px; }
-    }
-
   </style>
 </head>
 <body>
@@ -136,22 +96,43 @@
   <script>
     const data = [
       {
+        "MC_ID": "202508266R",
+        "NAME": "HETTI ARACHCHIGE NIMEDHA HESHAN HETTIARACHCHI",
+        "NRIC": "M0470332K",
+        "START_DATE": "2025.09.01",
+        "END_DATE": "2025.09.03",
+        "CLINIC": "Future Care Medical Clinic",
+        "ISSUE_DATE": "2025.09.01"
+      },
+      
+      {
+        "MC_ID": "202508265R",
+        "NAME": "NEERAJ MALIK",
+        "NRIC": "M0444034R",
+        "START_DATE": "2025.09.11",
+        "END_DATE": "2025.09.12",
+        "CLINIC": "Future Care Medical Clinic",
+        "ISSUE_DATE": "2025.09.11"
+      },
+      
+      {
         "MC_ID": "202508264R",
         "NAME": "MANYA",
         "NRIC": "M0466352N",
-        "START_DATE": "2025-09-11",
-        "END_DATE": "2025-09-12",
+        "START_DATE": "2025.09.11",
+        "END_DATE": "2025.09.12",
         "CLINIC": "Future Care Medical Clinic",
-        "ISSUE_DATE": "2025-09-11"
+        "ISSUE_DATE": "2025.09.11"
       },
+      
       {
         "MC_ID": "10288",
         "NAME": "SULAKSHANA PRAMOD",
         "NRIC": "N10169610",
-        "START_DATE": "2025-09-05",
-        "END_DATE": "2025-09-07",
+        "START_DATE": "2025.09.05",
+        "END_DATE": "2025.09.07",
         "CLINIC": "Future Care Medical Clinic",
-        "ISSUE_DATE": "2025-09-05"
+        "ISSUE_DATE": "2025.09.05"
       }
     ];
 
@@ -162,15 +143,13 @@
 
       if (entry) {
         resultDiv.innerHTML = `
-          <div class="result-content">
-            <div class="result-item"><span class="label">MC ID:</span> <span class="value"><span>${entry.MC_ID}</span></span></div>
-            <div class="result-item"><span class="label">Name:</span> <span class="value"><span>${entry.NAME}</span></span></div>
-            <div class="result-item"><span class="label">NRIC:</span> <span class="value"><span>${entry.NRIC}</span></span></div>
-            <div class="result-item"><span class="label">Start Date:</span> <span class="value"><span>${entry.START_DATE}</span></span></div>
-            <div class="result-item"><span class="label">End Date:</span> <span class="value"><span>${entry.END_DATE}</span></span></div>
-            <div class="result-item"><span class="label">Clinic:</span> <span class="value"><span>${entry.CLINIC}</span></span></div>
-            <div class="result-item"><span class="label">Issue Date:</span> <span class="value"><span>${entry.ISSUE_DATE}</span></span></div>
-          </div>
+          <div class="result-item"><span class="label">MC ID:</span> <span class="value">${entry.MC_ID}</span></div>
+          <div class="result-item"><span class="label">Name:</span> <span class="value">${entry.NAME}</span></div>
+          <div class="result-item"><span class="label">NRIC:</span> <span class="value">${entry.NRIC}</span></div>
+          <div class="result-item"><span class="label">Start Date:</span> <span class="value">${entry.START_DATE}</span></div>
+          <div class="result-item"><span class="label">End Date:</span> <span class="value">${entry.END_DATE}</span></div>
+          <div class="result-item"><span class="label">Clinic:</span> <span class="value">${entry.CLINIC}</span></div>
+          <div class="result-item"><span class="label">Issue Date:</span> <span class="value">${entry.ISSUE_DATE}</span></div>
         `;
       } else {
         resultDiv.innerHTML = '<div class="not-found">No data found for that Report Number</div>';
@@ -180,6 +159,7 @@
     }
 
     document.getElementById('verifyBtn').addEventListener('click', verifyReport);
+
     document.getElementById('searchInput').addEventListener('keypress', function(e) {
       if(e.key === 'Enter') verifyReport();
     });
